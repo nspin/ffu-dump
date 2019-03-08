@@ -90,7 +90,6 @@ def read_meta(f):
     stores = []
     for i in itertools.count(1):
         store_header = StoreHeader._read(f)
-        # V2
         f.seek(store_header.dwValidateDescriptorCount * store_header.dwValidateDescriptorLength, 1)
         block_data_entries = []
         for _ in range(store_header.dwWriteDescriptorCount):
